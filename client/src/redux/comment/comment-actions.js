@@ -8,7 +8,7 @@ export const getPostComments = (post_id) => (dispatch) => {
   dispatch({ type: commentActionTypes.LOADING_COMMENTS });
 
   axios
-    .get(`http://localhost:5000/api/posts/${post_id}/comments`)
+    .get(`/api/posts/${post_id}/comments`)
     .then((res) => {
       store.dispatch(clearErrors());
       dispatch({
@@ -25,7 +25,7 @@ export const getPostComments = (post_id) => (dispatch) => {
 export const addComment = (commentData) => (dispatch, getState) => {
   axios
     .post(
-      `http://localhost:5000/api/posts/${commentData.post}/comments`,
+      `/api/posts/${commentData.post}/comments`,
       commentData,
       tokenConfig(getState)
     )
@@ -45,7 +45,7 @@ export const addComment = (commentData) => (dispatch, getState) => {
 export const deleteComment = (post_id, comment_id) => (dispatch, getState) => {
   axios
     .delete(
-      `http://localhost:5000/api/posts/${post_id}/comments/${comment_id}`,
+      `/api/posts/${post_id}/comments/${comment_id}`,
       tokenConfig(getState)
     )
     .then((res) => {

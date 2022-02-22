@@ -9,7 +9,7 @@ export const loadPosts = () => (dispatch) => {
   dispatch({ type: postActionTypes.LOADING_POSTS });
 
   axios
-    .get("http://localhost:5000/api/posts")
+    .get("/api/posts")
     .then((res) => {
       store.dispatch(clearErrors());
       dispatch({ type: postActionTypes.POSTS_LOADED, payload: res.data.posts });
@@ -24,7 +24,7 @@ export const loadPost = (post_id) => (dispatch) => {
   dispatch({ type: postActionTypes.LOADING_POST });
 
   axios
-    .get(`http://localhost:5000/api/posts/${post_id}`)
+    .get(`/api/posts/${post_id}`)
     .then((res) => {
       store.dispatch(clearErrors());
       dispatch({
@@ -42,7 +42,7 @@ export const loadPost = (post_id) => (dispatch) => {
 export const addPost = (postData) => (dispatch, getState) => {
   const body = JSON.stringify(postData);
   axios
-    .post("http://localhost:5000/api/posts", body, tokenConfig(getState))
+    .post("/api/posts", body, tokenConfig(getState))
     .then((res) => {
       store.dispatch(clearErrors());
       dispatch({
