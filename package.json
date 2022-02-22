@@ -1,0 +1,17 @@
+{
+  "name": "mern-blog-v2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client/src && npm install && npm run build",
+    "devstart":"concurrently \"cd server && npm run devstart\" \"cd client && npm run start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}

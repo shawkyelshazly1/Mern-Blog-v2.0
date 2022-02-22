@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A backend server for a MERN stack Blog Web App",
+  "main": "index.js",
+  "scripts": {
+    "devstart": "nodemon index.js"
+  },
+  "keywords": [
+    "blog",
+    "web",
+    "mern"
+  ],
+  "author": "Shawky ELshazly",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.6",
+    "nodemon": "^2.0.15"
+  }
+}
